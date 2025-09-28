@@ -12,7 +12,9 @@ if st.button("Send"):
     if user_prompt.strip() != "":
         try:
             # Replace 5000 with your backend port if different
-            url = "http://127.0.0.1:5000/chat"
+            #url = "http://127.0.0.1:5000/chat"
+            url = "http://3.82.35.5:5000/chat"
+
             response = requests.post(url, json={"prompt": user_prompt})
             
             if response.status_code == 200:
@@ -25,4 +27,5 @@ if st.button("Send"):
                 st.error(f"Request failed with status {response.status_code}")
         except Exception as e:
             st.error(f"Exception: {e}")
+
 
